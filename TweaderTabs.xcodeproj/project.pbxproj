@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA570AF514297719002A285B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA570AF414297719002A285B /* UIKit.framework */; };
+		FA570AF714297719002A285B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA570AF614297719002A285B /* Foundation.framework */; };
+		FA570AF914297719002A285B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA570AF814297719002A285B /* CoreGraphics.framework */; };
+		FA570AFF14297719002A285B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA570AFD14297719002A285B /* InfoPlist.strings */; };
+		FA570B0114297719002A285B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA570B0014297719002A285B /* main.m */; };
+		FA570B0514297719002A285B /* TweaderTabsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA570B0414297719002A285B /* TweaderTabsAppDelegate.m */; };
+		FA570B0814297719002A285B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA570B0614297719002A285B /* MainWindow.xib */; };
+		FA570B0B14297719002A285B /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA570B0A14297719002A285B /* FirstViewController.m */; };
+		FA570B0E14297719002A285B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA570B0D14297719002A285B /* SecondViewController.m */; };
+		FA570B111429771A002A285B /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA570B0F1429771A002A285B /* FirstView.xib */; };
+		FA570B141429771A002A285B /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA570B121429771A002A285B /* SecondView.xib */; };
+		FA570B1C1429771A002A285B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA570B1B1429771A002A285B /* SenTestingKit.framework */; };
+		FA570B1D1429771A002A285B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA570AF414297719002A285B /* UIKit.framework */; };
+		FA570B1E1429771A002A285B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA570AF614297719002A285B /* Foundation.framework */; };
+		FA570B1F1429771A002A285B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA570AF814297719002A285B /* CoreGraphics.framework */; };
+		FA570B271429771A002A285B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA570B251429771A002A285B /* InfoPlist.strings */; };
+		FA570B291429771A002A285B /* TweaderTabsTests.h in Resources */ = {isa = PBXBuildFile; fileRef = FA570B281429771A002A285B /* TweaderTabsTests.h */; };
+		FA570B2B1429771A002A285B /* TweaderTabsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA570B2A1429771A002A285B /* TweaderTabsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA570B201429771A002A285B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA570AE714297719002A285B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA570AEF14297719002A285B;
+			remoteInfo = TweaderTabs;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA570AF014297719002A285B /* TweaderTabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweaderTabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA570AF414297719002A285B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FA570AF614297719002A285B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FA570AF814297719002A285B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FA570AFC14297719002A285B /* TweaderTabs-Info.plist */ = {isa = PBXFileReference; path = "TweaderTabs-Info.plist"; sourceTree = "<group>"; };
+		FA570AFE14297719002A285B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA570B0014297719002A285B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA570B0214297719002A285B /* TweaderTabs-Prefix.pch */ = {isa = PBXFileReference; path = "TweaderTabs-Prefix.pch"; sourceTree = "<group>"; };
+		FA570B0314297719002A285B /* TweaderTabsAppDelegate.h */ = {isa = PBXFileReference; path = TweaderTabsAppDelegate.h; sourceTree = "<group>"; };
+		FA570B0414297719002A285B /* TweaderTabsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweaderTabsAppDelegate.m; sourceTree = "<group>"; };
+		FA570B0714297719002A285B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		FA570B0914297719002A285B /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		FA570B0A14297719002A285B /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		FA570B0C14297719002A285B /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		FA570B0D14297719002A285B /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		FA570B101429771A002A285B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
+		FA570B131429771A002A285B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
+		FA570B1A1429771A002A285B /* TweaderTabsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweaderTabsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA570B1B1429771A002A285B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FA570B241429771A002A285B /* TweaderTabsTests-Info.plist */ = {isa = PBXFileReference; path = "TweaderTabsTests-Info.plist"; sourceTree = "<group>"; };
+		FA570B261429771A002A285B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA570B281429771A002A285B /* TweaderTabsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweaderTabsTests.h; sourceTree = "<group>"; };
+		FA570B2A1429771A002A285B /* TweaderTabsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweaderTabsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA570AED14297719002A285B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA570AF514297719002A285B /* UIKit.framework in Frameworks */,
+				FA570AF714297719002A285B /* Foundation.framework in Frameworks */,
+				FA570AF914297719002A285B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA570B161429771A002A285B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA570B1C1429771A002A285B /* SenTestingKit.framework in Frameworks */,
+				FA570B1D1429771A002A285B /* UIKit.framework in Frameworks */,
+				FA570B1E1429771A002A285B /* Foundation.framework in Frameworks */,
+				FA570B1F1429771A002A285B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA570AE514297719002A285B = {
+			isa = PBXGroup;
+			children = (
+				FA570AFA14297719002A285B /* TweaderTabs */,
+				FA570B221429771A002A285B /* TweaderTabsTests */,
+				FA570AF314297719002A285B /* Frameworks */,
+				FA570AF114297719002A285B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA570AF114297719002A285B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA570AF014297719002A285B /* TweaderTabs.app */,
+				FA570B1A1429771A002A285B /* TweaderTabsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA570AF314297719002A285B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA570AF414297719002A285B /* UIKit.framework */,
+				FA570AF614297719002A285B /* Foundation.framework */,
+				FA570AF814297719002A285B /* CoreGraphics.framework */,
+				FA570B1B1429771A002A285B /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA570AFA14297719002A285B /* TweaderTabs */ = {
+			isa = PBXGroup;
+			children = (
+				FA570B0314297719002A285B /* TweaderTabsAppDelegate.h */,
+				FA570B0414297719002A285B /* TweaderTabsAppDelegate.m */,
+				FA570B0614297719002A285B /* MainWindow.xib */,
+				FA570B0914297719002A285B /* FirstViewController.h */,
+				FA570B0A14297719002A285B /* FirstViewController.m */,
+				FA570B0C14297719002A285B /* SecondViewController.h */,
+				FA570B0D14297719002A285B /* SecondViewController.m */,
+				FA570B0F1429771A002A285B /* FirstView.xib */,
+				FA570B121429771A002A285B /* SecondView.xib */,
+				FA570AFB14297719002A285B /* Supporting Files */,
+			);
+			path = TweaderTabs;
+			sourceTree = "<group>";
+		};
+		FA570AFB14297719002A285B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA570AFC14297719002A285B /* TweaderTabs-Info.plist */,
+				FA570AFD14297719002A285B /* InfoPlist.strings */,
+				FA570B0014297719002A285B /* main.m */,
+				FA570B0214297719002A285B /* TweaderTabs-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA570B221429771A002A285B /* TweaderTabsTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA570B281429771A002A285B /* TweaderTabsTests.h */,
+				FA570B2A1429771A002A285B /* TweaderTabsTests.m */,
+				FA570B231429771A002A285B /* Supporting Files */,
+			);
+			path = TweaderTabsTests;
+			sourceTree = "<group>";
+		};
+		FA570B231429771A002A285B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA570B241429771A002A285B /* TweaderTabsTests-Info.plist */,
+				FA570B251429771A002A285B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA570AEF14297719002A285B /* TweaderTabs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA570B2E1429771A002A285B /* Build configuration list for PBXNativeTarget "TweaderTabs" */;
+			buildPhases = (
+				FA570AEC14297719002A285B /* Sources */,
+				FA570AED14297719002A285B /* Frameworks */,
+				FA570AEE14297719002A285B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TweaderTabs;
+			productName = TweaderTabs;
+			productReference = FA570AF014297719002A285B /* TweaderTabs.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA570B191429771A002A285B /* TweaderTabsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA570B311429771A002A285B /* Build configuration list for PBXNativeTarget "TweaderTabsTests" */;
+			buildPhases = (
+				FA570B151429771A002A285B /* Sources */,
+				FA570B161429771A002A285B /* Frameworks */,
+				FA570B171429771A002A285B /* Resources */,
+				FA570B181429771A002A285B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA570B211429771A002A285B /* PBXTargetDependency */,
+			);
+			name = TweaderTabsTests;
+			productName = TweaderTabsTests;
+			productReference = FA570B1A1429771A002A285B /* TweaderTabsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA570AE714297719002A285B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "UMD HCI Lab";
+			};
+			buildConfigurationList = FA570AEA14297719002A285B /* Build configuration list for PBXProject "TweaderTabs" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FA570AE514297719002A285B;
+			productRefGroup = FA570AF114297719002A285B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA570AEF14297719002A285B /* TweaderTabs */,
+				FA570B191429771A002A285B /* TweaderTabsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA570AEE14297719002A285B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA570AFF14297719002A285B /* InfoPlist.strings in Resources */,
+				FA570B0814297719002A285B /* MainWindow.xib in Resources */,
+				FA570B111429771A002A285B /* FirstView.xib in Resources */,
+				FA570B141429771A002A285B /* SecondView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA570B171429771A002A285B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA570B271429771A002A285B /* InfoPlist.strings in Resources */,
+				FA570B291429771A002A285B /* TweaderTabsTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FA570B181429771A002A285B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA570AEC14297719002A285B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA570B0114297719002A285B /* main.m in Sources */,
+				FA570B0514297719002A285B /* TweaderTabsAppDelegate.m in Sources */,
+				FA570B0B14297719002A285B /* FirstViewController.m in Sources */,
+				FA570B0E14297719002A285B /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA570B151429771A002A285B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA570B2B1429771A002A285B /* TweaderTabsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA570B211429771A002A285B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA570AEF14297719002A285B /* TweaderTabs */;
+			targetProxy = FA570B201429771A002A285B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA570AFD14297719002A285B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA570AFE14297719002A285B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FA570B0614297719002A285B /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA570B0714297719002A285B /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		FA570B0F1429771A002A285B /* FirstView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA570B101429771A002A285B /* en */,
+			);
+			name = FirstView.xib;
+			sourceTree = "<group>";
+		};
+		FA570B121429771A002A285B /* SecondView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA570B131429771A002A285B /* en */,
+			);
+			name = SecondView.xib;
+			sourceTree = "<group>";
+		};
+		FA570B251429771A002A285B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA570B261429771A002A285B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA570B2C1429771A002A285B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FA570B2D1429771A002A285B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA570B2F1429771A002A285B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TweaderTabs/TweaderTabs-Prefix.pch";
+				INFOPLIST_FILE = "TweaderTabs/TweaderTabs-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FA570B301429771A002A285B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TweaderTabs/TweaderTabs-Prefix.pch";
+				INFOPLIST_FILE = "TweaderTabs/TweaderTabs-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FA570B321429771A002A285B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TweaderTabs.app/TweaderTabs";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TweaderTabs/TweaderTabs-Prefix.pch";
+				INFOPLIST_FILE = "TweaderTabsTests/TweaderTabsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FA570B331429771A002A285B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TweaderTabs.app/TweaderTabs";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TweaderTabs/TweaderTabs-Prefix.pch";
+				INFOPLIST_FILE = "TweaderTabsTests/TweaderTabsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA570AEA14297719002A285B /* Build configuration list for PBXProject "TweaderTabs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA570B2C1429771A002A285B /* Debug */,
+				FA570B2D1429771A002A285B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA570B2E1429771A002A285B /* Build configuration list for PBXNativeTarget "TweaderTabs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA570B2F1429771A002A285B /* Debug */,
+				FA570B301429771A002A285B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FA570B311429771A002A285B /* Build configuration list for PBXNativeTarget "TweaderTabsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA570B321429771A002A285B /* Debug */,
+				FA570B331429771A002A285B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA570AE714297719002A285B /* Project object */;
+}
