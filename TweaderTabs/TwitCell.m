@@ -3,7 +3,8 @@
 
 @implementation TwitCell
 
-@synthesize cellArticle, gradient, articleView, tweeterView, photoView, dateView;
+@synthesize cellArticle, gradient, articleView, tweeterView, photoView, dateView,starButton;
+@synthesize filledImage,hollowImage;
 
 //
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -69,6 +70,18 @@
         //setup the date view
         dateView = [[[UILabel alloc] initWithFrame:CGRectZero] retain];
         [self.contentView addSubview:dateView];
+        
+        
+        //setup the star icon
+        starButton = [UIButton buttonWithType:UIButtonTypeCustom]; 
+        hollowImage = [[[UIImage imageNamed:@"star_unfilled_resized.png"] stretchableImageWithLeftCapWidth:12.0 topCapHeight:0.0] retain];
+        filledImage = [[[UIImage imageNamed:@"star_filled_resized.png"] stretchableImageWithLeftCapWidth:12.0 topCapHeight:0.0] retain];
+        
+        [starButton setBackgroundImage:hollowImage forState:UIControlStateNormal];
+        [starButton addTarget:self action:@selector(starButtonPressed:) forControlEvents:UIControlEventTouchDown];
+        [self.contentView addSubview:starButton];
+        
+        state = false;
 
 	}
 	return self;
@@ -97,7 +110,8 @@
     //***Photo
     photoView.frame = CGRectMake(xOrigin+190, 15.0, 60.0, 60.0);
     
-    //***
+    //***Star Button
+    starButton.frame = CGRectMake(xOrigin, yOrigin+30, 30.0, 30.0);
 }
 
 
@@ -111,10 +125,16 @@
 
 
 
-/* action for when an article is starred 
-- (void)checkAction:(id)sender
+// action for when an article is starred 
+- (void)starButtonPressed:(id)sender
 {
+    if(state){
+        [starButton setBackgroundImage:hollowImage forState:UIControlStateNormal];
+    } else{
+        [starButton setBackgroundImage:filledImage forState:UIControlStateNormal];
+    }
+    state = !state;
 
 }
-*/
+
 @end

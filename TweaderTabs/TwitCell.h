@@ -7,6 +7,7 @@
 {
 	//BOOL starred;
 	//UIButton *starButton;
+    bool state;
 }
 
 //@property (nonatomic, assign) BOOL starred;
@@ -16,6 +17,11 @@
 @property (nonatomic, retain) UILabel *articleView;
 @property (nonatomic, retain) UIImageView *photoView;
 @property (nonatomic, retain) UILabel *dateView;
+@property (nonatomic, retain) UIButton *starButton;
+@property (nonatomic, retain) UIImage *filledImage;
+@property (nonatomic, retain) UIImage *hollowImage;
+
+-(void) starButtonPressed;
 
 
 @end
