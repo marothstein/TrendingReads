@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SA_OAuthTwitterController.h"
+    
+@interface TweaderTabsAppDelegate : NSObject <UIApplicationDelegate, SA_OAuthTwitterControllerDelegate,UITabBarControllerDelegate>{
 
-@interface TweaderTabsAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate>
+    //SA_OAuthTwitterEngine    *_engine;
+    
+}
+
+@property (nonatomic, copy) NSString *urlToLoad;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 

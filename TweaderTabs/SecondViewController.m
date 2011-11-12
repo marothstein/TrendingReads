@@ -7,16 +7,35 @@
 //
 
 #import "SecondViewController.h"
+#import "TweaderTabsAppDelegate.h"
 
 @implementation SecondViewController
+@synthesize webView;
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        
+
 }
-*/
+
+- (void) viewDidAppear:(BOOL)animated{
+    NSString *urlAddress = @"http://www.instapaper.com/m?u=";
+    TweaderTabsAppDelegate *appDelegate = (TweaderTabsAppDelegate*)[UIApplication sharedApplication].delegate;
+    //appDelegate.urlToLoad;
+    urlAddress = [NSString stringWithFormat:@"%@%@",urlAddress,appDelegate.urlToLoad];
+    NSLog(urlAddress);
+    //Create a URL object.
+    NSURL *url = [NSURL URLWithString:urlAddress];
+    //NSLog(@"url for webview: %@",url);
+    //URL Requst Object
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    NSLog(@" url for main document: %@", requestObj.URL);
+    //Load the request in the UIWebView.
+    [webView loadRequest:requestObj];
+
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -35,9 +54,12 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-
+    
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
+
 @end
+
+
