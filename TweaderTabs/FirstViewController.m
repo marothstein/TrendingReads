@@ -314,19 +314,6 @@
     
 }
 
--(void)clearLocalData{
-    
-    [modifiedArticlesDict removeAllObjects];
-    [knownArticlesDict removeAllObjects];
-    [articleArray removeAllObjects];
-    
-}
-
--(void)startReload{
-    
-    [self pushToDB]; //push modifiedArticleDict to DB
-    [self clearLocalData]; //clears modifiedArticlesDict, knownArticlesDict, and articlesArray
-}
 
 
 - (void)statusesReceived:(NSArray *)statuses forRequest:(NSString *)identifier{
@@ -335,7 +322,7 @@
     numStatuses = 0;
     NSLog(@"all statuses: %d",[statuses count]);
     
-    
+    [self clearLocalData];
     for(int i = 0; i < [statuses count]; i++){
        // NSLog(@"  1");
         NSString * text = [[statuses objectAtIndex:i] valueForKey:@"text"];
@@ -523,6 +510,20 @@
     
 }
 
+-(void)clearLocalData{
+    
+    [modifiedArticlesDict removeAllObjects];
+    [knownArticlesDict removeAllObjects];
+    [articleArray removeAllObjects];
+    
+}
+
+-(void)startReload{
+    
+    [self pushToDB]; //push modifiedArticleDict to DB
+    //[self clearLocalData]; //clears modifiedArticlesDict, knownArticlesDict, and articlesArray
+}
+
 -(void) pushToDB{
     //static NSString * requestString = @"http://localhost:8080/api/updateArticles?";
     static NSString * requestString = @"http://trendingreads.appspot.com/api/updateArticles?";
@@ -597,7 +598,7 @@
         NSLog(@"%@",string);
     }
     
-    [self clearLocalData];
+    //[self clearLocalData];
     [_engine getFollowedTimelineSinceID: 0 startingAtPage:3 count:30];
     //self.pushComplete = true;
     //[string release];
