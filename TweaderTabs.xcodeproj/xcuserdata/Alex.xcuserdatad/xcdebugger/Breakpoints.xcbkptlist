@@ -33,11 +33,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "TweaderTabs/FirstViewController.h"
-         timestampString = "344731906.66977"
+         timestampString = "344753131.779418"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "61"
-         endingLineNumber = "61"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
          landmarkName = "@interface FirstViewController"
          landmarkType = "2">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "TweaderTabs/FirstViewController.m"
-         timestampString = "344749260.751806"
+         timestampString = "344753131.779418"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "397"
-         endingLineNumber = "397"
+         startingLineNumber = "394"
+         endingLineNumber = "394"
          landmarkName = "-statusesReceived:forRequest:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -75,11 +75,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "TweaderTabs/TwitCell.m"
-         timestampString = "344737389.441888"
+         timestampString = "344751503.156608"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "319"
-         endingLineNumber = "319"
+         startingLineNumber = "321"
+         endingLineNumber = "321"
          landmarkName = "@implementation TwitCell"
          landmarkType = "3">
       </FileBreakpoint>
@@ -89,11 +89,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "TweaderTabs/TwitCell.m"
-         timestampString = "344737389.441888"
+         timestampString = "344751503.156608"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "318"
-         endingLineNumber = "318"
+         startingLineNumber = "320"
+         endingLineNumber = "320"
          landmarkName = "@implementation TwitCell"
          landmarkType = "3">
       </FileBreakpoint>
@@ -103,11 +103,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "TweaderTabs/FirstViewController.m"
-         timestampString = "344749260.751806"
+         timestampString = "344753131.779418"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "477"
-         endingLineNumber = "477"
+         startingLineNumber = "474"
+         endingLineNumber = "474"
          landmarkName = "-pullComplete:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,6 +138,20 @@
          endingLineNumber = "23"
          landmarkName = "@interface FirstViewController"
          landmarkType = "2">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "TweaderTabs/RankedArticlesVC.m"
+         timestampString = "344752275.548834"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "125"
+         endingLineNumber = "125"
+         landmarkName = "-tableView:accessoryButtonTappedForRowWithIndexPath:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

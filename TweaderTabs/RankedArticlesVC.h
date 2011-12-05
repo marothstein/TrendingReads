@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "PullSyncObject.h"
-#import "TwitCell.h"
+#import "RankedCell.h"
 #import "SBJson.h"
 #import "PullRefreshTableViewController.h"
 
-@interface RankedArticlesVC : PullRefreshTableViewController<UITableViewDataSource, UITableViewDelegate, PullProtocol,TwitCellDelegate>{
+@interface RankedArticlesVC : PullRefreshTableViewController<UITableViewDataSource, UITableViewDelegate, PullProtocol>{
     
     bool updating;
     

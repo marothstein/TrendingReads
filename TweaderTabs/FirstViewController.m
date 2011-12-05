@@ -13,7 +13,7 @@
 #define kOAuthConsumerKey      @"UmSCIqH21XB3TgsD0FFSLQ"
 #define kOAuthConsumerSecret   @"yIKKPuCSqOmCxMrrNvFE3muDj8yXvh4VtuTOT9gWBWE"
 @implementation FirstViewController
-@synthesize table;
+//@synthesize table;
 @synthesize statusStrings;
 @synthesize deviceID;
 @synthesize userImageData;
@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    updating = false;
     numStatuses = -1;
     appName = @"VotedReads";
     //make the month dictionary
@@ -58,7 +59,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    static int count = 0;
+
     if(!_engine){
         NSLog(@"Making engine");
         _engine = [[[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self] retain];  
@@ -78,7 +79,7 @@
         else{
             NSLog(@"  controller does't exist");
         }
-        NSLog(@"  Engine not authorized, %d", count);
+        NSLog(@"  Engine not authorized, %d", timeSinceLastUpdate);
         
     } else if(timeSinceLastUpdate < 0 || timeSinceLastUpdate > 100000){
         NSLog(@"  Engine authorized. Getting statuses.");
@@ -86,13 +87,9 @@
         //[_engine getFollowedTimelineSinceID: 0 startingAtPage:3 count:30];
         //NSLog(@"  Engine Authorized!");
         [self startReload];
-        //timeSinceLastUpdate = 1;
+        timeSinceLastUpdate = 1;
     }
-    
-    
-    //initialize the article dictionary
-    rowToArticleDict = [NSMutableDictionary dictionaryWithCapacity:1];
-    count++;
+
     
 }
 
@@ -506,7 +503,12 @@
     }
     
     [jarray release];
-    [table reloadData];
+    [self.tableView reloadData];
+    if(updating){
+        updating = false;
+        [self stopLoading];
+    }
+    
     
 }
 
@@ -620,8 +622,8 @@
 }
 
 - (void) refresh{
-    
-    NSLog(@"DURF");
+    updating = true;
+    [self startReload];
     
 }
 
@@ -644,6 +646,8 @@ NSInteger articleCompare(id firstID, id secondID, void * context){
     }
     
 }
+
+
 
 
 

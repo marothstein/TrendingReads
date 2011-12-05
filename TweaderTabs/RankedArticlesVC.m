@@ -7,6 +7,7 @@
 //
 
 #import "RankedArticlesVC.h"
+#import "TweaderTabsAppDelegate.h"
 
 @implementation RankedArticlesVC
 
@@ -116,6 +117,28 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+	// called when the accessory view (disclosure button) is touched
+	//UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];	
+	
+	TweaderTabsAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    
+    //UILabel *articleTitle = (UILabel *)[cell.contentView viewWithTag:ARTICLE_TAG];
+    //NSLog(@"accessory button tapped! Cell#: %d",indexPath.row);
+    NSString *urlAsString = [[rankedArticles objectAtIndex:indexPath.row] articleUrl];
+    appDelegate.urlToLoad = urlAsString;
+    
+	//NSDictionary *infoDict = [NSDictionary dictionaryWithObjectsAndKeys:
+	//						  cell.title, @"text",
+	//						  [NSNumber numberWithBool:cell.checked], @"checked",
+	//						  nil];
+	//[appDelegate showDetail:infoDict];
+    [self.tabBarController setSelectedIndex:2];
+}
+
+
+
 // Customize the appearance of table view cells.
 //iPhone size
 //  width: 320 points
@@ -126,15 +149,14 @@
     static NSString *CellIdentifier = @"Cell";
     int thisRow = indexPath.row;
     
-	TwitCell *cell = (TwitCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	RankedCell *cell = (RankedCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil)
 	{
-		cell = (TwitCell *)[[[TwitCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = (RankedCell *)[[[RankedCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 	}
     
     cell.cellArticle = [rankedArticles objectAtIndex:thisRow];
     cell.articleView.text = cell.cellArticle.articleTitle;
-    [cell formatArticleOnly];
     [cell updateVotes];
     
 	return cell;

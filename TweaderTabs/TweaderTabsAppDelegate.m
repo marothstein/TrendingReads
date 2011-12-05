@@ -27,21 +27,26 @@
     [self.window makeKeyAndVisible];
     NSArray * controllers = [self.tabBarController viewControllers];
     NSMutableArray * newControllers = [[[NSMutableArray alloc] initWithCapacity:3] retain];
-    [newControllers insertObject:[controllers objectAtIndex:0] atIndex:0];
+    
+    
+    
+    
     RankedArticlesVC * rankedArticles = [[[RankedArticlesVC alloc]init]retain];
     rankedArticles.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemTopRated tag:1];
-    //[rankedArticles setTab
+    
+    FirstViewController * recentArticles = [[[FirstViewController alloc]init]retain];
+    recentArticles.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMostRecent tag:0];
+    
+    [newControllers insertObject:recentArticles atIndex:0];
     [newControllers insertObject:rankedArticles atIndex:1];
-    [newControllers insertObject:[controllers objectAtIndex:1] atIndex:2];
+    [newControllers insertObject:[controllers objectAtIndex:0] atIndex:2];
 
     [self.tabBarController setViewControllers:newControllers];
     
     
-    //make the navbar controller
-    
-    
-    
     //release stuff
+    //[navController release];
+    [recentArticles release];
     [rankedArticles release];
     [newControllers release];
     

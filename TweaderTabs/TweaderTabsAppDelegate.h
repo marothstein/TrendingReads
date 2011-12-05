@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SA_OAuthTwitterController.h"
 #import "RankedArticlesVC.h"
+#import "FirstViewController.h"
     
 @interface TweaderTabsAppDelegate : NSObject <UIApplicationDelegate, SA_OAuthTwitterControllerDelegate,UITabBarControllerDelegate>{
 

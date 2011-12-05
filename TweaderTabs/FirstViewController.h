@@ -20,13 +20,14 @@
 #define TWEETER_TAG 1
 #define PHOTO_TAG   2
 
-@interface FirstViewController : UIViewController<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, PullProtocol, PushProtocol,SA_OAuthTwitterControllerDelegate,TwitCellDelegate>{
+@interface FirstViewController : PullRefreshTableViewController<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, PullProtocol, PushProtocol,SA_OAuthTwitterControllerDelegate,TwitCellDelegate>{
     
     IBOutlet UITextField     *tweetTextField;
     SA_OAuthTwitterEngine    *_engine;
     NSMutableDictionary      *rowToArticleDict;
     int numStatuses;
     int timeSinceLastUpdate;
+    bool updating;
     //NSArray *statusStrings;
     
 }
@@ -40,7 +41,7 @@
 @property (nonatomic, retain) NSMutableDictionary * knownArticlesDict; //the articles that were created in getStatuses
 @property (nonatomic, retain) NSDictionary *monthDictionary;
 @property (nonatomic, retain) NSMutableArray *articleArray;
-@property (retain) IBOutlet UITableView * table;
+//@property (retain) IBOutlet UITableView * table;
 @property (nonatomic, retain) NSString *appName;
 @property (nonatomic, retain) PullSyncObject * puller;
 @property (nonatomic, retain) PushSyncObject * pusher;

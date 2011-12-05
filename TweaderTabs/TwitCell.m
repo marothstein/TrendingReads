@@ -145,6 +145,8 @@
     [starButton setHidden:true];
     
     
+    
+    
 }
 
 -(void) showNonArticleData{

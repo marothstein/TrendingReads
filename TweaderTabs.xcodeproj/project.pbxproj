@@ -17,6 +17,7 @@
 		FA3EC49F148C700B00F209AD /* star_unfilled_resized.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3EC49D148C700B00F209AD /* star_unfilled_resized.png */; };
 		FA3EC4A0148C700B00F209AD /* star_filled_resized.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3EC49E148C700B00F209AD /* star_filled_resized.png */; };
 		FA3EC4A2148C703200F209AD /* Aa Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3EC4A1148C703200F209AD /* Aa Icon.png */; };
+		FA3EC4A5148C7C5000F209AD /* RankedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3EC4A4148C7C4F00F209AD /* RankedCell.m */; };
 		FA570AF514297719002A285B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA570AF414297719002A285B /* UIKit.framework */; };
 		FA570AF714297719002A285B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA570AF614297719002A285B /* Foundation.framework */; };
 		FA570AF914297719002A285B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA570AF814297719002A285B /* CoreGraphics.framework */; };
@@ -103,6 +104,8 @@
 		FA3EC49D148C700B00F209AD /* star_unfilled_resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_unfilled_resized.png; sourceTree = "<group>"; };
 		FA3EC49E148C700B00F209AD /* star_filled_resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_filled_resized.png; sourceTree = "<group>"; };
 		FA3EC4A1148C703200F209AD /* Aa Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aa Icon.png"; sourceTree = "<group>"; };
+		FA3EC4A3148C7C4F00F209AD /* RankedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankedCell.h; sourceTree = "<group>"; };
+		FA3EC4A4148C7C4F00F209AD /* RankedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankedCell.m; sourceTree = "<group>"; };
 		FA570AF014297719002A285B /* TweaderTabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweaderTabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA570AF414297719002A285B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA570AF614297719002A285B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -299,6 +302,8 @@
 				FA1FA159148557C100A46FF6 /* RankedArticlesVC.h */,
 				FA1FA15A148557C100A46FF6 /* RankedArticlesVC.m */,
 				FA7D97A1146CCA7B00CB6117 /* TwitCell.h */,
+				FA3EC4A3148C7C4F00F209AD /* RankedCell.h */,
+				FA3EC4A4148C7C4F00F209AD /* RankedCell.m */,
 				FA7D97A2146CCA7B00CB6117 /* TwitCell.m */,
 				FA570B0914297719002A285B /* FirstViewController.h */,
 				FA570B0A14297719002A285B /* FirstViewController.m */,
@@ -667,6 +672,7 @@
 				FA623B761485AE300030E1CC /* SBJsonWriter.m in Sources */,
 				FAFF1C5A148830FD004F5921 /* PushSyncObject.m in Sources */,
 				FA3EC49A148BFEB900F209AD /* PullRefreshTableViewController.m in Sources */,
+				FA3EC4A5148C7C5000F209AD /* RankedCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
