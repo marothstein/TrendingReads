@@ -7,7 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SyncObject.h"
 
-@interface PullSyncObject : NSObject
+@protocol PullProtocol <NSObject>
+
+-(void) pullComplete:(NSData*)data;
+
+@end
+
+@interface PullSyncObject : NSObject<SyncObjectDelegate>{
+
+}
+
+@property (nonatomic,retain) SyncObject * syncObject;
+@property (nonatomic,assign) id <PullProtocol> delegate;
+
+-(void) pull:(NSString*) url;
 
 @end

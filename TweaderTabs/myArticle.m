@@ -10,8 +10,8 @@
 
 @implementation myArticle
 
-@synthesize tweeterName,tweeterImage,articleUrl,articleTitle,tweetDate;
-
+@synthesize tweeterName,tweeterImage,articleUrl,articleTitle,tweetDate,num_votes,state;
+@synthesize articleID;
 - (id)init
 {
     self = [super init];
@@ -19,15 +19,44 @@
         // Initialization code here.
     }
     
-    tweeterName = @"tweeter not set";
-    articleUrl = @"url not set";
-    articleTitle = @"title not set";
-    tweetDate = [[NSDate alloc] init];
+    self.tweeterName = @"tweeter not set";
+    self.articleUrl = @"url not set";
+    self.articleTitle = @"title not set";
+    self.tweetDate = [[NSDate alloc] init];
     //NSLog(@"hurf: %@", tweetDate);
-    tweeterImage = [UIImage imageNamed:@"Aa Icon"];
+    self.tweeterImage = [UIImage imageNamed:@"Aa Icon"];
     
     return self;
 }
+
+-(NSDictionary *) asDictionary{
+    
+    NSMutableDictionary * dict = [[[NSMutableDictionary alloc] init]autorelease];
+    
+    //'title'
+    //'tweeter'
+    //'url'
+    //'articleID'
+    
+    NSString * formattedTitle = [self.articleTitle stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString * formattedTweeter = [self.tweeterName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString * formattedURL = [self.articleUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString * formattedID = [self.articleID stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    [dict setValue:formattedURL forKey:@"url"];
+    [dict setValue:formattedTweeter forKey:@"tweeter"];
+    [dict setValue:formattedTitle forKey:@"title"];
+    [dict setValue:formattedID forKey:@"articleID"];
+    /*
+    [dict setValue:self.articleUrl forKey:@"url"];
+    [dict setValue:self.tweeterName forKey:@"tweeter"];
+    [dict setValue:self.articleTitle forKey:@"title"];
+    [dict setValue:self.articleID forKey:@"articleID"];
+     */
+
+    return dict;
+}
+
 
 - (void) dealloc{
     

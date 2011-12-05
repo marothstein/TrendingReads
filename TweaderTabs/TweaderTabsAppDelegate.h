@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SA_OAuthTwitterController.h"
+#import "RankedArticlesVC.h"
     
 @interface TweaderTabsAppDelegate : NSObject <UIApplicationDelegate, SA_OAuthTwitterControllerDelegate,UITabBarControllerDelegate>{
 
@@ -20,5 +21,7 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+
+@property (nonatomic, retain) UINavigationController * navController;
 
 @end

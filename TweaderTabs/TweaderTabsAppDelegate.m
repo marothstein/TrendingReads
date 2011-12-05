@@ -13,7 +13,7 @@
 @synthesize urlToLoad;
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
-
+@synthesize navController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -25,8 +25,25 @@
     // Add the tab bar controller's current view as a subview of the window
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    NSArray * controllers = [self.tabBarController viewControllers];
+    NSMutableArray * newControllers = [[[NSMutableArray alloc] initWithCapacity:3] retain];
+    [newControllers insertObject:[controllers objectAtIndex:0] atIndex:0];
+    RankedArticlesVC * rankedArticles = [[[RankedArticlesVC alloc]init]retain];
+    rankedArticles.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemTopRated tag:1];
+    //[rankedArticles setTab
+    [newControllers insertObject:rankedArticles atIndex:1];
+    [newControllers insertObject:[controllers objectAtIndex:1] atIndex:2];
+
+    [self.tabBarController setViewControllers:newControllers];
     
     
+    //make the navbar controller
+    
+    
+    
+    //release stuff
+    [rankedArticles release];
+    [newControllers release];
     
     
     return YES;
@@ -70,6 +87,10 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+    
+    //Sync data from cells
+    
+    
 }
 
 - (void)dealloc
