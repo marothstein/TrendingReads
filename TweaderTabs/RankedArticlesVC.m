@@ -73,7 +73,7 @@
                                                     message:message 
                                                    delegate:self cancelButtonTitle:@"OK" 
                                           otherButtonTitles:nil];
-    [alert show];
+    //[alert show];
     [alert release];
     //
     
