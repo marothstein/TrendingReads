@@ -176,6 +176,10 @@
     }
     else if(!shouldRankAll || [self.unrankedArticles count] < 1){ //done ranking articles
         shouldRankAll = false;
+        if(updating){
+            updating = false;
+            [self stopLoading];
+        }
         //sort the articles
         [rankedArticles sortUsingComparator: 
          ^(id obj1, id obj2) 
@@ -306,7 +310,7 @@
 
 -(void) refresh{
     
-    //updating = true;
+    updating = true;
     //[self pullFromDB];
     numPulls = 0;
     [self startRankingAll];

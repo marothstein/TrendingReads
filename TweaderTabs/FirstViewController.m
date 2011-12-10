@@ -182,11 +182,11 @@
     [defaults synchronize];  
 }  
  
- - (NSString *) cachedTwitterOAuthDataForUsername: (NSString *) username {  
+- (NSString *) cachedTwitterOAuthDataForUsername: (NSString *) username {  
      
      return [[NSUserDefaults standardUserDefaults] objectForKey: @"authData"];  
      
- }
+}
 
 
 #pragma mark Table view methods
@@ -331,6 +331,9 @@
         NSTextCheckingResult *altMatch;
         NSString * matched;
 
+        
+        //NSLog(@"Title: ");
+        
         while(!isMatched && ti < [tokens count]){
             
             NSString * currentToken = [tokens objectAtIndex:ti];
@@ -474,9 +477,9 @@
         //return;
     //}
     if([jarray respondsToSelector:@selector(objectForKey:)]){
-        NSLog(@"responds to dictionary method");
+        //NSLog(@"responds to dictionary method");
     }else if([jarray respondsToSelector:@selector(objectAtIndex:)]){
-        NSLog(@"responds to array method");
+        //NSLog(@"responds to array method");
         
         for(int i = 0; i < [jarray count] ; i++){
             
@@ -488,7 +491,7 @@
                 NSString *votesString = [current objectForKey:@"num_votes"];
                 article.num_votes = [votesString intValue];
             }
-            NSLog(@"modifying article: %@",article);
+            //NSLog(@"modifying article: %@",article);
         }
     }else{
         NSLog(@"no response to test selectors");
@@ -593,7 +596,7 @@
     }
     
     //[self clearLocalData];
-    [_engine getFollowedTimelineSinceID: 0 startingAtPage:3 count:30];
+    [_engine getFollowedTimelineSinceID: 0 startingAtPage:1 count:1];
     //self.pushComplete = true;
     //[string release];
     //if(self.readyForPull){
