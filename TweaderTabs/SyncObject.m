@@ -35,11 +35,11 @@
     
     NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (theConnection) {
-        NSLog(@"SyncObject: Connection made.");
+        //NSLog(@"SyncObject: Connection made.");
         self.requestedData = [NSMutableData dataWithLength:0]; 
     } else {
         // Inform the user that the connection failed.
-        NSLog(@"SyncObject: Connection failed.");
+        //NSLog(@"SyncObject: Connection failed.");
     }
 }
 

@@ -45,10 +45,10 @@
         
         //setup the article title view
         articleView = [[[UILabel alloc] initWithFrame:CGRectZero] retain];
-        articleView.textAlignment = UITextAlignmentRight;
+        articleView.textAlignment = UITextAlignmentLeft;
         articleView.numberOfLines = 1;
         articleView.lineBreakMode = UILineBreakModeTailTruncation;
-        articleView.adjustsFontSizeToFitWidth = TRUE;
+        articleView.adjustsFontSizeToFitWidth = false;
         articleView.minimumFontSize = 12;
         //articleView.text = [NSString stringWithFormat:@"%@",[[NSDate alloc] init]];
         articleView.backgroundColor = [UIColor clearColor];
@@ -58,10 +58,10 @@
         //setup the tweeter name subview
         tweeterView = [[[UILabel alloc] initWithFrame:CGRectZero] retain];
         tweeterView.numberOfLines = 1;
-        tweeterView.textAlignment = UITextAlignmentRight;
+        tweeterView.textAlignment = UITextAlignmentCenter;
         tweeterView.textColor = [UIColor redColor];
         tweeterView.lineBreakMode = UILineBreakModeTailTruncation;
-        tweeterView.adjustsFontSizeToFitWidth = TRUE;
+        tweeterView.adjustsFontSizeToFitWidth = false;
         tweeterView.minimumFontSize = 10;
         tweeterView.backgroundColor = [UIColor clearColor];
         //tweeterView.text = @"!!";
@@ -112,7 +112,7 @@
 {
 	[super layoutSubviews];
     //***Gradient
-    UIView * backgroundView = [ [ [ UIView alloc ] initWithFrame:CGRectMake(0, 0, 400, 90)] retain];
+    UIView * backgroundView = [ [ [ UIView alloc ] initWithFrame:CGRectMake(0, 0, 400, 120)] retain];
     gradient.frame = backgroundView.bounds;
     [backgroundView.layer insertSublayer:gradient atIndex:0];
     self.backgroundView = backgroundView;
@@ -121,20 +121,20 @@
     int yOrigin = self.contentView.frame.origin.y;
     
     //***Article Title
-    articleView.frame = CGRectMake(xOrigin+35, yOrigin, 150.0, 45.0);
+    articleView.frame = CGRectMake(xOrigin+10, yOrigin+20, 150.0, 20.0);
     //articleView.text = [NSString stringWithFormat:@"%@",[[NSDate alloc] init]];
     
     //***Tweeter
-    tweeterView.frame = CGRectMake(xOrigin+80, yOrigin+50, 70.0, 15.0);
+    tweeterView.frame = CGRectMake(xOrigin+170, yOrigin+85, 100.0, 15.0);
     
     //***Photo
-    photoView.frame = CGRectMake(xOrigin+190, 15.0, 60.0, 60.0);
+    photoView.frame = CGRectMake(xOrigin+190, 20.0, 60.0, 60.0);
     
     //***Star Button
-    starButton.frame = CGRectMake(xOrigin, yOrigin+20, 30.0, 30.0);
+    //starButton.frame = CGRectMake(xOrigin, yOrigin+20, 30.0, 30.0);
     
     //***Votes Label
-    votesLabel.frame = CGRectMake(xOrigin+15, yOrigin+55, 15.0, 15.0);
+    //votesLabel.frame = CGRectMake(xOrigin+15, yOrigin+55, 15.0, 15.0);
     //votesLabel.text = @"0";
 }
 

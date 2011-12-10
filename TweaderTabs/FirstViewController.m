@@ -278,7 +278,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 90;
+//    return 90;
+    return 120;
 }
 
 - (void)requestSucceeded:(NSString *)requestIdentifier{

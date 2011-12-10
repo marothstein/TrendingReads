@@ -42,10 +42,10 @@
         //setup the article title view
         articleView = [[[UILabel alloc] initWithFrame:CGRectZero] retain];
         articleView.textAlignment = UITextAlignmentLeft;
-        articleView.numberOfLines = 3;
-        //articleView.lineBreakMode = UILineBreakModeTailTruncation;
-        articleView.lineBreakMode = UILineBreakModeCharacterWrap;
-        //articleView.adjustsFontSizeToFitWidth = TRUE;
+        articleView.numberOfLines = 1;
+        articleView.lineBreakMode = UILineBreakModeTailTruncation;
+        //articleView.lineBreakMode = UILineBreakModeCharacterWrap;
+        articleView.adjustsFontSizeToFitWidth = FALSE;
         articleView.minimumFontSize = 12;
         //articleView.text = [NSString stringWithFormat:@"%@",[[NSDate alloc] init]];
         articleView.backgroundColor = [UIColor clearColor];
@@ -55,10 +55,10 @@
         
         //setup the votes label (shows the number of time this article has been starred)
         votesLabel = [[[UILabel alloc] initWithFrame:CGRectZero] retain];
-        votesLabel.textAlignment = UITextAlignmentCenter;
+        votesLabel.textAlignment = UITextAlignmentLeft;
         votesLabel.numberOfLines = 1;
         votesLabel.lineBreakMode = UILineBreakModeTailTruncation;
-        votesLabel.adjustsFontSizeToFitWidth = TRUE;
+        votesLabel.adjustsFontSizeToFitWidth = FALSE;
         votesLabel.minimumFontSize = 12;
         //articleView.text = [NSString stringWithFormat:@"%@",[[NSDate alloc] init]];
         votesLabel.backgroundColor = [UIColor clearColor];
@@ -83,10 +83,10 @@
     int yOrigin = self.contentView.frame.origin.y;
     
     //***Article Title
-    articleView.frame = CGRectMake(xOrigin+35, yOrigin, 250.0, 45.0);
+    articleView.frame = CGRectMake(xOrigin+35, 0, 250.0, 45.0);
 
     //***Votes Label
-    votesLabel.frame = CGRectMake(xOrigin+15, yOrigin+55, 15.0, 15.0);
+    votesLabel.frame = CGRectMake(xOrigin+15, yOrigin+55, 45.0, 45.0);
     //votesLabel.text = @"0";
 }
 

@@ -40,7 +40,7 @@
 
 -(void) dataObatained:(NSMutableData *)data{
     
-    NSLog(@"PushSyncObject: data obtained");
+    //NSLog(@"PushSyncObject: data obtained");
     [self.delegate pushComplete:data];
     
 }

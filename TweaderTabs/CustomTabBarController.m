@@ -33,6 +33,7 @@ static int barHeight = 49;
     RankedArticlesVC * rankedArticles = [[[RankedArticlesVC alloc]init]retain];
     rankedArticles.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemTopRated tag:1];
     [rankedArticles setAcDelegate:self];
+    [rankedArticles setRankDelegate:self];
     
     SecondViewController * articleView = [[[SecondViewController alloc]init]retain];
     articleView.tabBarItem = [[UITabBarItem alloc] initWithTitle: @"Article" image:[UIImage imageNamed:@"Aa Icon.png"] tag:2];
@@ -213,6 +214,13 @@ static int barHeight = 49;
     [tapGesture release];
     [myTabBar release];
     [myToolBar release];
+    
+}
+
+-(NSArray*) recentArticles{
+    
+    FirstViewController * fvc = [tabBarControllers objectAtIndex:0];
+    return ( [fvc.knownArticlesDict allValues]);
     
 }
 

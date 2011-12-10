@@ -12,19 +12,23 @@
 @implementation RankedArticlesVC
 
 @synthesize puller,appName,knownArticles,rankedArticles,table;
-@synthesize acDelegate;
+@synthesize acDelegate,pusher,unrankedArticles,rankDelegate;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.appName = @"VotedReads";
-    self.rankedArticles = [[[NSMutableArray alloc]init]retain];
-    self.knownArticles = [[[NSMutableDictionary alloc]init]retain];
+    self.rankedArticles = [[NSMutableArray alloc]init];
+    self.knownArticles = [[NSMutableDictionary alloc]init];
+    self.unrankedArticles = [[NSMutableArray alloc]init];
     puller = [[PullSyncObject alloc] init];
     [puller setDelegate:self];
+    self.pusher = [[PushSyncObject alloc] init];
+    [pusher setDelegate:self];
     updating = false;
-    
+    shouldRankAll = false;
+    numPulls = 0;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -33,7 +37,8 @@
     static int first = 0;
     if(first++ == 0){
         NSLog(@"pulling");
-        [self pullFromDB];
+        //[self pullFromDB];
+        [self startRankingAll];
     }
     
 }
@@ -56,6 +61,146 @@
     }
 }
 
+
+-(void) makeUnranked{
+    
+    NSArray * temp = [self.rankDelegate recentArticles];
+    
+    //
+    int count = [temp count];
+    NSString * message = [NSString stringWithFormat:@"Articles in recent: %d",count];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hey There"
+                                                    message:message 
+                                                   delegate:self cancelButtonTitle:@"OK" 
+                                          otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+    //
+    
+    for(myArticle * _article in temp){
+        myArticle * article = [[[myArticle alloc]init]retain];
+        article.articleTitle = _article.articleTitle;
+        article.articleUrl = _article.articleUrl;
+        article.articleID = _article.articleID;
+        article.tweeterName = _article.tweeterName;
+        article.num_votes = 0;
+        [unrankedArticles addObject:article];
+        [article release];
+    }
+    
+    
+    
+}
+
+-(void) startRankingAll{
+    
+    //while true and unrankedArticles is not empty, keep ranking articles
+    shouldRankAll = true;
+    //reset unranked and ranked articles
+    [rankedArticles removeAllObjects];
+    [unrankedArticles removeAllObjects];
+    [self makeUnranked];
+    
+    //begin pulling the rankings
+    [self rankNextArticle];
+    
+}
+
+-(void) rankNextArticle{
+    
+    static NSString * apiURLString = @"http://search.twitter.com/search.json?";
+    //NSString * formattedApiString = [__apiString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    //NSMutableDictionary * headers = [[[NSMutableDictionary alloc] init]retain];
+    myArticle * articleToRank = [unrankedArticles lastObject];
+    NSString * urlString = articleToRank.articleUrl; //query url
+    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString * finalString = [NSString stringWithFormat:@"%@q=%@&rpp=100",apiURLString,urlString];
+    [puller pull:finalString];
+}
+
+-(void) pullComplete:(NSData *)_data{
+    static NSString * apiURLString = @"http://search.twitter.com/search.json";
+    if(numPulls > 100){
+        shouldRankAll = false;
+        NSString * message = [NSString stringWithFormat:@"More than 100 pulls. Size of (unranked,ranked) : (%d,%d)",[unrankedArticles count],[rankedArticles count]];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Stopping Ranking"
+                                                        message:message 
+                                                       delegate:self cancelButtonTitle:@"OK" 
+                                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+        
+    }
+    NSLog(@"Num unranked: %d", unrankedArticles.count);
+    bool hasNextPage = false;
+    NSString * nextPageURL = @"";
+    SBJsonParser *parser = [[[SBJsonParser alloc] init] retain];
+    NSDictionary *jobject = [[parser objectWithData:_data] retain];
+    if([jobject respondsToSelector:@selector(objectForKey:)]){
+        //NSLog(@"Ranked: responds to dictionary method");
+        
+        myArticle * article = [unrankedArticles lastObject];
+        int votes = article.num_votes;
+        NSArray * results = [jobject objectForKey:@"results"];
+        if(results){ //increase the number of votes by the number of mentions ON THIS PAGE OF RESULTS
+            votes = votes + [results count];
+        }
+        article.num_votes = votes;
+        NSLog(@"votes: %d",votes);
+        NSString * queryString = [jobject objectForKey:@"query"];
+        NSString * nextPage    = [jobject objectForKey:@"next_page"];
+        //queryString = [queryString string
+        if(nextPage && ![queryString isEqual:@"\%28null\%29"]){ // is there another page of results?
+            
+            NSString * urlString = [NSString stringWithFormat:@"%@%@",apiURLString,nextPage];
+            NSLog(@"next page: %@",urlString);
+            hasNextPage = true;
+            nextPageURL = urlString;
+        }else{ //no next_page, so we've counted all the votes. Pop and add to ranked
+            nextPage = false;
+        }
+        
+    }else if([jobject respondsToSelector:@selector(objectAtIndex:)]){
+        NSLog(@"Ranked: responds to array method");
+    }
+    else{
+        NSLog(@"Ranked: no response to test selectors");
+    }
+    
+    
+    if(hasNextPage){ //this article has another page
+        numPulls++;
+        [puller pull:nextPageURL];
+        
+    }
+    else if(!shouldRankAll || [self.unrankedArticles count] < 1){ //done ranking articles
+        shouldRankAll = false;
+        //sort the articles
+        [rankedArticles sortUsingComparator: 
+         ^(id obj1, id obj2) 
+         {
+             NSNumber* key1 = [NSNumber numberWithInt:[obj1 num_votes]];
+             NSNumber* key2 = [NSNumber numberWithInt:[obj2 num_votes]];
+             return [key2 compare: key1];
+         }];
+        
+        [self.tableView reloadData];
+    }else{ //there are still articles to rank!
+        numPulls++;
+        [rankedArticles addObject:[unrankedArticles lastObject]];
+        [unrankedArticles removeLastObject];
+        [self rankNextArticle];
+    }
+    
+    
+    //release retained objects
+    [parser release];
+    [jobject release];
+}
+
+
+
 -(void) pullFromDB{
     
     //[pullSynchObject pull]
@@ -69,6 +214,9 @@
     [puller pull:requestString];
 }
 
+
+
+/*
 -(void) pullComplete:(NSData *)_data{
     
     SBJsonParser *parser = [[[SBJsonParser alloc] init] retain];
@@ -116,7 +264,7 @@
         [self stopLoading];
     }
 }
-
+*/
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
@@ -158,8 +306,10 @@
 
 -(void) refresh{
     
-    updating = true;
-    [self pullFromDB];
+    //updating = true;
+    //[self pullFromDB];
+    numPulls = 0;
+    [self startRankingAll];
 }
 
 @end

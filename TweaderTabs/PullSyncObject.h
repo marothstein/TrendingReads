@@ -19,6 +19,8 @@
 
 }
 
+-(void) pullFromUrl:(NSString *)url WithHeaders:(NSMutableDictionary *)headers;
+
 @property (nonatomic,retain) SyncObject * syncObject;
 @property (nonatomic,assign) id <PullProtocol> delegate;
 

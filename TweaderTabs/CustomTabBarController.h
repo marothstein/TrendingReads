@@ -14,7 +14,7 @@
 #import "ArticleCellProtocol.h"
 #import "PushSyncObject.h"
 
-@interface CustomTabBarController : UIViewController<UITabBarDelegate, ArticleCellProtocol, TapToHideProtocol, IPDelegate, UIGestureRecognizerDelegate>{
+@interface CustomTabBarController : UIViewController<UITabBarDelegate, ArticleCellProtocol, TapToHideProtocol, IPDelegate, UIGestureRecognizerDelegate, RankingDelegate>{
     
     int selectedIndex;
     
@@ -25,6 +25,7 @@
 @property (nonatomic, retain) UIToolbar * myToolBar;
 @property (nonatomic, retain) NSArray  * tabBarControllers;
 @property (nonatomic, retain) NSArray  * tabBarItems;
+@property (nonatomic, retain) NSArray  * currentArticles;
 @property (nonatomic, retain) UIViewController   * contentViewController;
 @property (nonatomic, retain) PushSyncObject *pusher;
 @property (nonatomic, retain) UITapGestureRecognizer * tapGesture;

@@ -26,3 +26,9 @@
 -(void) pushToInstapaper : (NSString *)url;
 
 @end
+
+@protocol RankingDelegate <NSObject>
+
+-(NSArray*) recentArticles;
+
+@end
