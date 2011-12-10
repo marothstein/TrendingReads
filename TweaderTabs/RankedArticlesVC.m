@@ -12,6 +12,7 @@
 @implementation RankedArticlesVC
 
 @synthesize puller,appName,knownArticles,rankedArticles,table;
+@synthesize acDelegate;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
@@ -119,22 +120,14 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-	// called when the accessory view (disclosure button) is touched
-	//UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];	
-	
+	// called when the accessory view (disclosure button) is touched	
 	TweaderTabsAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     
-    //UILabel *articleTitle = (UILabel *)[cell.contentView viewWithTag:ARTICLE_TAG];
-    //NSLog(@"accessory button tapped! Cell#: %d",indexPath.row);
     NSString *urlAsString = [[rankedArticles objectAtIndex:indexPath.row] articleUrl];
     appDelegate.urlToLoad = urlAsString;
     
-	//NSDictionary *infoDict = [NSDictionary dictionaryWithObjectsAndKeys:
-	//						  cell.title, @"text",
-	//						  [NSNumber numberWithBool:cell.checked], @"checked",
-	//						  nil];
-	//[appDelegate showDetail:infoDict];
-    [self.tabBarController setSelectedIndex:2];
+    [self.acDelegate accessoryButtonPressed:urlAsString]; 
+    //[self.tabBarController setSelectedIndex:2];
 }
 
 

@@ -14,11 +14,12 @@
 #import "PullSyncObject.h"
 #import "PushSyncObject.h"
 #import "PullRefreshTableViewController.h"
-
+#import "ArticleCellProtocol.h"
 
 #define ARTICLE_TAG 0
 #define TWEETER_TAG 1
 #define PHOTO_TAG   2
+
 
 @interface FirstViewController : PullRefreshTableViewController<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, PullProtocol, PushProtocol,SA_OAuthTwitterControllerDelegate,TwitCellDelegate>{
     
@@ -47,6 +48,7 @@
 @property (nonatomic, retain) PushSyncObject * pusher;
 @property (nonatomic, assign) bool readyForPull;
 @property (nonatomic, assign) bool pushComplete;
+@property (nonatomic, assign) id <ArticleCellProtocol>acDelegate;
 
 -(NSString*)getURLFor:(int)RowNumber;
 -(void) starAction:(id)sender;

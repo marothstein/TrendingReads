@@ -8,10 +8,11 @@
 
 #import "SyncObject.h"
 
+
 @implementation SyncObject
 
-@synthesize delegate,requestedData;
-
+@synthesize delegate,requestedData,authenticatingService;
+@synthesize uname,pword;
 
 -(void)syncData:(NSString *) requestString{
     
@@ -73,6 +74,32 @@
     //so, now that we're done with it, we need to release it
     [connection release];
     [self.delegate dataObatained:self.requestedData];
+}
+
+- (void)connection:(NSURLConnection *)connection 
+didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+    // Access has failed two times...
+    if ([challenge previousFailureCount] > 1)
+    {
+        [connection release];
+        NSString * failureMessage = [NSString stringWithFormat:@"Unable to authenticate with %@. Please check your username and password.",self.authenticatingService];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Authentication Error"
+                                                     message:failureMessage 
+                                                     delegate:self cancelButtonTitle:@"OK" 
+                                                     otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+    }
+    else 
+    {
+        // Answer the challenge
+        NSURLCredential *cred = [[[NSURLCredential alloc] initWithUser:self.uname 
+                                                          password:self.pword
+                                                          persistence:NSURLCredentialPersistenceForSession] autorelease];
+        [[challenge sender] useCredential:cred forAuthenticationChallenge:challenge];
+    }
 }
 
 @end

@@ -1,3 +1,4 @@
+
 //
 //  main.m
 //  TweaderTabs
@@ -7,11 +8,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TweaderTabsAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     int retVal = UIApplicationMain(argc, argv, nil, nil);
+    //int retVal = UIApplicationMain(argc, argv, nil, NSStringFromClass([TweaderTabsAppDelegate class]));
     [pool release];
     return retVal;
 }

@@ -11,6 +11,7 @@
 #import "RankedCell.h"
 #import "SBJson.h"
 #import "PullRefreshTableViewController.h"
+#import "ArticleCellProtocol.h"
 
 @interface RankedArticlesVC : PullRefreshTableViewController<UITableViewDataSource, UITableViewDelegate, PullProtocol>{
     
@@ -25,6 +26,7 @@
 @property (nonatomic, retain)  NSMutableDictionary * knownArticles;
 @property (nonatomic, retain)  NSMutableArray * rankedArticles;
 @property (retain) IBOutlet UITableView * table;
+@property (nonatomic, assign) id <ArticleCellProtocol>acDelegate;
 
 
 @end

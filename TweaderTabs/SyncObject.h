@@ -26,6 +26,10 @@
 
 @property (nonatomic, retain) NSMutableData * requestedData;
 @property (nonatomic, assign) id <SyncObjectDelegate> delegate;
+@property (nonatomic, copy)   NSString * authenticatingService;
+
+@property (nonatomic, copy) NSString *uname;
+@property (nonatomic, copy) NSString *pword;
 //@property (nonatomic, copy)   NSString * requestType;
 //@property (nonatomic, retain) NSData   * postData;
 

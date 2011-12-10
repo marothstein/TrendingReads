@@ -18,6 +18,9 @@
 		FA3EC4A0148C700B00F209AD /* star_filled_resized.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3EC49E148C700B00F209AD /* star_filled_resized.png */; };
 		FA3EC4A2148C703200F209AD /* Aa Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3EC4A1148C703200F209AD /* Aa Icon.png */; };
 		FA3EC4A5148C7C5000F209AD /* RankedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3EC4A4148C7C4F00F209AD /* RankedCell.m */; };
+		FA3EC4A814912EED00F209AD /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3EC4A714912EED00F209AD /* CustomTabBarController.m */; };
+		FA3EC4AB149165F700F209AD /* CustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3EC4AA149165F600F209AD /* CustomTabBar.m */; };
+		FA3EC4C51492E0A000F209AD /* PushToInstapaperObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3EC4C41492E09F00F209AD /* PushToInstapaperObject.m */; };
 		FA570AF514297719002A285B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA570AF414297719002A285B /* UIKit.framework */; };
 		FA570AF714297719002A285B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA570AF614297719002A285B /* Foundation.framework */; };
 		FA570AF914297719002A285B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA570AF814297719002A285B /* CoreGraphics.framework */; };
@@ -106,6 +109,13 @@
 		FA3EC4A1148C703200F209AD /* Aa Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aa Icon.png"; sourceTree = "<group>"; };
 		FA3EC4A3148C7C4F00F209AD /* RankedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankedCell.h; sourceTree = "<group>"; };
 		FA3EC4A4148C7C4F00F209AD /* RankedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankedCell.m; sourceTree = "<group>"; };
+		FA3EC4A614912EED00F209AD /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
+		FA3EC4A714912EED00F209AD /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
+		FA3EC4A9149165F500F209AD /* CustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBar.h; sourceTree = "<group>"; };
+		FA3EC4AA149165F600F209AD /* CustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBar.m; sourceTree = "<group>"; };
+		FA3EC4C21492BDEC00F209AD /* ArticleCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCellProtocol.h; sourceTree = "<group>"; };
+		FA3EC4C31492E09E00F209AD /* PushToInstapaperObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushToInstapaperObject.h; sourceTree = "<group>"; };
+		FA3EC4C41492E09F00F209AD /* PushToInstapaperObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushToInstapaperObject.m; sourceTree = "<group>"; };
 		FA570AF014297719002A285B /* TweaderTabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweaderTabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA570AF414297719002A285B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA570AF614297719002A285B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -298,6 +308,10 @@
 				FAAE516B143BC7E500CBC635 /* Nib Files */,
 				FA570B0314297719002A285B /* TweaderTabsAppDelegate.h */,
 				FA570B0414297719002A285B /* TweaderTabsAppDelegate.m */,
+				FA3EC4A614912EED00F209AD /* CustomTabBarController.h */,
+				FA3EC4A714912EED00F209AD /* CustomTabBarController.m */,
+				FA3EC4A9149165F500F209AD /* CustomTabBar.h */,
+				FA3EC4AA149165F600F209AD /* CustomTabBar.m */,
 				FA570B0614297719002A285B /* MainWindow.xib */,
 				FA1FA159148557C100A46FF6 /* RankedArticlesVC.h */,
 				FA1FA15A148557C100A46FF6 /* RankedArticlesVC.m */,
@@ -305,6 +319,7 @@
 				FA3EC4A3148C7C4F00F209AD /* RankedCell.h */,
 				FA3EC4A4148C7C4F00F209AD /* RankedCell.m */,
 				FA7D97A2146CCA7B00CB6117 /* TwitCell.m */,
+				FA3EC4C21492BDEC00F209AD /* ArticleCellProtocol.h */,
 				FA570B0914297719002A285B /* FirstViewController.h */,
 				FA570B0A14297719002A285B /* FirstViewController.m */,
 				FA570B0C14297719002A285B /* SecondViewController.h */,
@@ -321,6 +336,8 @@
 				FA1FA1571481D80900A46FF6 /* PullSyncObject.m */,
 				FAFF1C58148830FD004F5921 /* PushSyncObject.h */,
 				FAFF1C59148830FD004F5921 /* PushSyncObject.m */,
+				FA3EC4C31492E09E00F209AD /* PushToInstapaperObject.h */,
+				FA3EC4C41492E09F00F209AD /* PushToInstapaperObject.m */,
 			);
 			path = TweaderTabs;
 			sourceTree = "<group>";
@@ -673,6 +690,9 @@
 				FAFF1C5A148830FD004F5921 /* PushSyncObject.m in Sources */,
 				FA3EC49A148BFEB900F209AD /* PullRefreshTableViewController.m in Sources */,
 				FA3EC4A5148C7C5000F209AD /* RankedCell.m in Sources */,
+				FA3EC4A814912EED00F209AD /* CustomTabBarController.m in Sources */,
+				FA3EC4AB149165F700F209AD /* CustomTabBar.m in Sources */,
+				FA3EC4C51492E0A000F209AD /* PushToInstapaperObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

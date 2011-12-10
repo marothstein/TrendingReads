@@ -23,6 +23,7 @@
 @synthesize monthDictionary;
 @synthesize appName;
 @synthesize modifiedArticlesDict,knownArticlesDict,puller,pusher,readyForPull,pushComplete;
+@synthesize acDelegate;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
@@ -51,7 +52,7 @@
     self.deviceID = [[UIDevice currentDevice] uniqueIdentifier];
     self.pushComplete = false;
     self.readyForPull = false;
-    //NSLog(@"device ID: %@", deviceID);
+    NSLog(@"device ID: %@", deviceID);
     //NSLog(@"%@",monthDictionary);
     //NSLog(@"%d statuses!",numStatuses);
     //load first view controller
@@ -136,22 +137,12 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-	// called when the accessory view (disclosure button) is touched
-	//UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];	
-	
-	TweaderTabsAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    
-    //UILabel *articleTitle = (UILabel *)[cell.contentView viewWithTag:ARTICLE_TAG];
-    //NSLog(@"accessory button tapped! Cell#: %d",indexPath.row);
+	//called when the accessory view (disclosure button) is touched
+    TweaderTabsAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     NSString *urlAsString = [[articleArray objectAtIndex:indexPath.row] articleUrl];
     appDelegate.urlToLoad = urlAsString;
-    
-	//NSDictionary *infoDict = [NSDictionary dictionaryWithObjectsAndKeys:
-	//						  cell.title, @"text",
-	//						  [NSNumber numberWithBool:cell.checked], @"checked",
-	//						  nil];
-	//[appDelegate showDetail:infoDict];
-    [self.tabBarController setSelectedIndex:2];
+    [acDelegate accessoryButtonPressed:urlAsString];
+    //[self.tabBarController setSelectedIndex:2];
 }
 
 -(void)starButtonPressed:(NSString *)articleID{
